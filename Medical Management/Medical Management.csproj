@@ -103,6 +103,18 @@
     <Compile Include="Master Forms\Supplier.Designer.cs">
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transaction Forms\Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction Forms\Purchase.Designer.cs">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction Forms\Sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction Forms\Sale.Designer.cs">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Master Forms\Company.resx">
       <DependentUpon>Company.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +141,12 @@
     <EmbeddedResource Include="Master Forms\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaction Forms\Purchase.resx">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction Forms\Sale.resx">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -142,5 +160,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Medical_Management.Transaction_Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +53,18 @@ namespace Medical_Management
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void saleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sale sale = new Sale();
+            sale.Show();
+        }
+
+        private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Purchase purchase = new Purchase();
+            purchase.Show();
         }
     }
 }

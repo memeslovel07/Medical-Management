@@ -130,17 +130,19 @@
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
             this.saleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saleToolStripMenuItem.Text = "Sale";
+            this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
             // 
             // purchaseToolStripMenuItem
             // 
             this.purchaseToolStripMenuItem.Name = "purchaseToolStripMenuItem";
             this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.purchaseToolStripMenuItem.Text = "Purchase";
+            this.purchaseToolStripMenuItem.Click += new System.EventHandler(this.purchaseToolStripMenuItem_Click);
             // 
             // salaryToolStripMenuItem
             // 
             this.salaryToolStripMenuItem.Name = "salaryToolStripMenuItem";
-            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.salaryToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.salaryToolStripMenuItem.Text = "Salary";
             // 
             // reportsToolStripMenuItem
@@ -157,25 +159,25 @@
             // iDWiseToolStripMenuItem
             // 
             this.iDWiseToolStripMenuItem.Name = "iDWiseToolStripMenuItem";
-            this.iDWiseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.iDWiseToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.iDWiseToolStripMenuItem.Text = "ID Wise";
             // 
             // dateToolStripMenuItem
             // 
             this.dateToolStripMenuItem.Name = "dateToolStripMenuItem";
-            this.dateToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dateToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.dateToolStripMenuItem.Text = " Date Wise";
             // 
             // voucherWiseToolStripMenuItem
             // 
             this.voucherWiseToolStripMenuItem.Name = "voucherWiseToolStripMenuItem";
-            this.voucherWiseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.voucherWiseToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.voucherWiseToolStripMenuItem.Text = "Voucher Wise";
             // 
             // nameWiseToolStripMenuItem
             // 
             this.nameWiseToolStripMenuItem.Name = "nameWiseToolStripMenuItem";
-            this.nameWiseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nameWiseToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.nameWiseToolStripMenuItem.Text = "Name Wise";
             // 
             // utilitiesToolStripMenuItem
@@ -192,25 +194,25 @@
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             // 
             // calenderToolStripMenuItem
             // 
             this.calenderToolStripMenuItem.Name = "calenderToolStripMenuItem";
-            this.calenderToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.calenderToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.calenderToolStripMenuItem.Text = "Calender";
             // 
             // calculatorToolStripMenuItem
             // 
             this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
-            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.calculatorToolStripMenuItem.Text = "Calculator";
             // 
             // keyboardToolStripMenuItem
             // 
             this.keyboardToolStripMenuItem.Name = "keyboardToolStripMenuItem";
-            this.keyboardToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.keyboardToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.keyboardToolStripMenuItem.Text = "Keyboard";
             // 
             // exitToolStripMenuItem
