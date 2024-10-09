@@ -36,7 +36,7 @@ namespace Medical_Management
             }
            else if (objdt.Rows.Count > 0)
             {
-                MessageBox.Show("Welcome");
+                MessageBox.Show("Welcome to my Page");
                 Mainpage homemenu = new Mainpage();
                 homemenu.Show();
                
