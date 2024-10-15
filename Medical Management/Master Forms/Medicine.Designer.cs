@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cmbmedcode = new System.Windows.Forms.ComboBox();
+            this.txtdtexp = new System.Windows.Forms.DateTimePicker();
+            this.txtdtmanu = new System.Windows.Forms.DateTimePicker();
             this.txtpower = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtprice = new System.Windows.Forms.TextBox();
@@ -58,8 +59,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.cmbmedcode);
+            this.groupBox2.Controls.Add(this.txtdtexp);
+            this.groupBox2.Controls.Add(this.txtdtmanu);
             this.groupBox2.Controls.Add(this.txtpower);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtprice);
@@ -77,23 +79,32 @@
             this.groupBox2.Size = new System.Drawing.Size(420, 273);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // dateTimePicker2
+            // cmbmedcode
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(223, 153);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(148, 22);
-            this.dateTimePicker2.TabIndex = 16;
+            this.cmbmedcode.FormattingEnabled = true;
+            this.cmbmedcode.Location = new System.Drawing.Point(177, 15);
+            this.cmbmedcode.Name = "cmbmedcode";
+            this.cmbmedcode.Size = new System.Drawing.Size(194, 24);
+            this.cmbmedcode.TabIndex = 17;
+            this.cmbmedcode.SelectedIndexChanged += new System.EventHandler(this.cmbmedcode_SelectedIndexChanged);
+            this.cmbmedcode.Click += new System.EventHandler(this.cmbmedcode_Click);
             // 
-            // dateTimePicker1
+            // txtdtexp
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(223, 119);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(145, 22);
-            this.dateTimePicker1.TabIndex = 15;
+            this.txtdtexp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtdtexp.Location = new System.Drawing.Point(223, 153);
+            this.txtdtexp.Name = "txtdtexp";
+            this.txtdtexp.Size = new System.Drawing.Size(148, 22);
+            this.txtdtexp.TabIndex = 16;
+            // 
+            // txtdtmanu
+            // 
+            this.txtdtmanu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtdtmanu.Location = new System.Drawing.Point(223, 119);
+            this.txtdtmanu.Name = "txtdtmanu";
+            this.txtdtmanu.Size = new System.Drawing.Size(145, 22);
+            this.txtdtmanu.TabIndex = 15;
             // 
             // txtpower
             // 
@@ -159,7 +170,6 @@
             this.label6.Size = new System.Drawing.Size(52, 18);
             this.label6.TabIndex = 5;
             this.label6.Text = "Name";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -221,6 +231,7 @@
             this.btnsave.TabIndex = 2;
             this.btnsave.Text = "SAVE";
             this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btncancel
             // 
@@ -231,6 +242,7 @@
             this.btncancel.TabIndex = 1;
             this.btncancel.Text = "CANCEL";
             this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // groupBox1
             // 
@@ -253,6 +265,7 @@
             this.btnupdate.TabIndex = 2;
             this.btnupdate.Text = "UPDATE";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btndelete
             // 
@@ -263,6 +276,7 @@
             this.btndelete.TabIndex = 1;
             this.btndelete.Text = "DELETE";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnadd
             // 
@@ -273,6 +287,7 @@
             this.btnadd.TabIndex = 0;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // Medicine
             // 
@@ -284,7 +299,8 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "Medicine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = " ";
+            this.Load += new System.EventHandler(this.Medicine_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -307,8 +323,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtpower;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txtdtexp;
+        private System.Windows.Forms.DateTimePicker txtdtmanu;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btncancel;
@@ -316,5 +332,6 @@
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnadd;
+        private System.Windows.Forms.ComboBox cmbmedcode;
     }
 }

@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtname = new System.Windows.Forms.TextBox();
-            this.txtaddress = new System.Windows.Forms.TextBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
-            this.txtcontact = new System.Windows.Forms.TextBox();
-            this.txtcomid = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.cmbempid = new System.Windows.Forms.ComboBox();
+            this.txtdesig = new System.Windows.Forms.TextBox();
+            this.txtsalary = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,8 +39,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.txtaddress = new System.Windows.Forms.TextBox();
+            this.txtemail = new System.Windows.Forms.TextBox();
+            this.txtcontact = new System.Windows.Forms.TextBox();
+            this.txtempid = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
@@ -59,8 +60,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Silver;
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.cmbempid);
+            this.groupBox2.Controls.Add(this.txtdesig);
+            this.groupBox2.Controls.Add(this.txtsalary);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label8);
@@ -72,58 +74,37 @@
             this.groupBox2.Controls.Add(this.txtaddress);
             this.groupBox2.Controls.Add(this.txtemail);
             this.groupBox2.Controls.Add(this.txtcontact);
-            this.groupBox2.Controls.Add(this.txtcomid);
+            this.groupBox2.Controls.Add(this.txtempid);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(3, 83);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(420, 268);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // txtname
+            // cmbempid
             // 
-            this.txtname.Location = new System.Drawing.Point(156, 57);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(194, 22);
-            this.txtname.TabIndex = 11;
+            this.cmbempid.FormattingEnabled = true;
+            this.cmbempid.Location = new System.Drawing.Point(156, 19);
+            this.cmbempid.Name = "cmbempid";
+            this.cmbempid.Size = new System.Drawing.Size(194, 24);
+            this.cmbempid.TabIndex = 37;
+            this.cmbempid.SelectedIndexChanged += new System.EventHandler(this.cmbempid_SelectedIndexChanged);
+            this.cmbempid.Click += new System.EventHandler(this.cmbempid_Click);
             // 
-            // txtaddress
+            // txtdesig
             // 
-            this.txtaddress.Location = new System.Drawing.Point(156, 90);
-            this.txtaddress.Name = "txtaddress";
-            this.txtaddress.Size = new System.Drawing.Size(194, 22);
-            this.txtaddress.TabIndex = 10;
+            this.txtdesig.Location = new System.Drawing.Point(156, 194);
+            this.txtdesig.Name = "txtdesig";
+            this.txtdesig.Size = new System.Drawing.Size(194, 22);
+            this.txtdesig.TabIndex = 36;
             // 
-            // txtemail
+            // txtsalary
             // 
-            this.txtemail.Location = new System.Drawing.Point(156, 158);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(194, 22);
-            this.txtemail.TabIndex = 9;
-            // 
-            // txtcontact
-            // 
-            this.txtcontact.Location = new System.Drawing.Point(156, 123);
-            this.txtcontact.Name = "txtcontact";
-            this.txtcontact.Size = new System.Drawing.Size(194, 22);
-            this.txtcontact.TabIndex = 8;
-            // 
-            // txtcomid
-            // 
-            this.txtcomid.Location = new System.Drawing.Point(156, 21);
-            this.txtcomid.Name = "txtcomid";
-            this.txtcomid.Size = new System.Drawing.Size(194, 22);
-            this.txtcomid.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 18);
-            this.label1.TabIndex = 0;
+            this.txtsalary.Location = new System.Drawing.Point(156, 227);
+            this.txtsalary.Name = "txtsalary";
+            this.txtsalary.Size = new System.Drawing.Size(194, 22);
+            this.txtsalary.TabIndex = 35;
             // 
             // label13
             // 
@@ -175,7 +156,6 @@
             this.label10.Size = new System.Drawing.Size(67, 18);
             this.label10.TabIndex = 30;
             this.label10.Text = "Contact";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -197,19 +177,49 @@
             this.label12.TabIndex = 28;
             this.label12.Text = "Employee Id";
             // 
-            // textBox1
+            // txtname
             // 
-            this.textBox1.Location = new System.Drawing.Point(156, 227);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 22);
-            this.textBox1.TabIndex = 35;
+            this.txtname.Location = new System.Drawing.Point(156, 57);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(194, 22);
+            this.txtname.TabIndex = 11;
             // 
-            // textBox2
+            // txtaddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(156, 194);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 22);
-            this.textBox2.TabIndex = 36;
+            this.txtaddress.Location = new System.Drawing.Point(156, 90);
+            this.txtaddress.Name = "txtaddress";
+            this.txtaddress.Size = new System.Drawing.Size(194, 22);
+            this.txtaddress.TabIndex = 10;
+            // 
+            // txtemail
+            // 
+            this.txtemail.Location = new System.Drawing.Point(156, 158);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(194, 22);
+            this.txtemail.TabIndex = 9;
+            // 
+            // txtcontact
+            // 
+            this.txtcontact.Location = new System.Drawing.Point(156, 123);
+            this.txtcontact.Name = "txtcontact";
+            this.txtcontact.Size = new System.Drawing.Size(194, 22);
+            this.txtcontact.TabIndex = 8;
+            // 
+            // txtempid
+            // 
+            this.txtempid.Location = new System.Drawing.Point(156, 21);
+            this.txtempid.Name = "txtempid";
+            this.txtempid.Size = new System.Drawing.Size(194, 22);
+            this.txtempid.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 18);
+            this.label1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -232,6 +242,7 @@
             this.btnupdate.TabIndex = 2;
             this.btnupdate.Text = "UPDATE";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btndelete
             // 
@@ -242,6 +253,7 @@
             this.btndelete.TabIndex = 1;
             this.btndelete.Text = "DELETE";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnadd
             // 
@@ -252,6 +264,7 @@
             this.btnadd.TabIndex = 0;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // groupBox3
             // 
@@ -273,6 +286,7 @@
             this.btnsave.TabIndex = 2;
             this.btnsave.Text = "SAVE";
             this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btncancel
             // 
@@ -283,6 +297,7 @@
             this.btncancel.TabIndex = 1;
             this.btncancel.Text = "CANCEL";
             this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // employee1
             // 
@@ -293,7 +308,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "employee1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "employee1";
+            this.Load += new System.EventHandler(this.employee1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -308,7 +325,7 @@
         private System.Windows.Forms.TextBox txtaddress;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtcontact;
-        private System.Windows.Forms.TextBox txtcomid;
+        private System.Windows.Forms.TextBox txtempid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label2;
@@ -317,8 +334,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtdesig;
+        private System.Windows.Forms.TextBox txtsalary;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btndelete;
@@ -326,5 +343,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.ComboBox cmbempid;
     }
 }

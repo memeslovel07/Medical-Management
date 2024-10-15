@@ -33,6 +33,7 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbcomid = new System.Windows.Forms.ComboBox();
             this.txtwebsite = new System.Windows.Forms.TextBox();
             this.txtname = new System.Windows.Forms.TextBox();
             this.txtaddress = new System.Windows.Forms.TextBox();
@@ -75,6 +76,7 @@
             this.btnupdate.TabIndex = 2;
             this.btnupdate.Text = "UPDATE";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btndelete
             // 
@@ -85,6 +87,7 @@
             this.btndelete.TabIndex = 1;
             this.btndelete.Text = "DELETE";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnadd
             // 
@@ -95,10 +98,12 @@
             this.btnadd.TabIndex = 0;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
+            this.groupBox2.Controls.Add(this.cmbcomid);
             this.groupBox2.Controls.Add(this.txtwebsite);
             this.groupBox2.Controls.Add(this.txtname);
             this.groupBox2.Controls.Add(this.txtaddress);
@@ -116,6 +121,16 @@
             this.groupBox2.Size = new System.Drawing.Size(420, 229);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // cmbcomid
+            // 
+            this.cmbcomid.FormattingEnabled = true;
+            this.cmbcomid.Location = new System.Drawing.Point(143, 17);
+            this.cmbcomid.Name = "cmbcomid";
+            this.cmbcomid.Size = new System.Drawing.Size(194, 24);
+            this.cmbcomid.TabIndex = 13;
+            this.cmbcomid.SelectedIndexChanged += new System.EventHandler(this.cmbcomid_SelectedIndexChanged);
+            this.cmbcomid.Click += new System.EventHandler(this.cmbcomid_Click);
             // 
             // txtwebsite
             // 
@@ -239,6 +254,7 @@
             this.btnsave.TabIndex = 2;
             this.btnsave.Text = "SAVE";
             this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btncancel
             // 
@@ -249,6 +265,7 @@
             this.btncancel.TabIndex = 1;
             this.btncancel.Text = "CANCEL";
             this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // label2
             // 
@@ -272,6 +289,7 @@
             this.Name = "Company";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Company_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -304,5 +322,6 @@
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtcontact;
         private System.Windows.Forms.TextBox txtcomid;
+        private System.Windows.Forms.ComboBox cmbcomid;
     }
 }

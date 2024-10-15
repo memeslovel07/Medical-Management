@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbsupid = new System.Windows.Forms.ComboBox();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtcontact = new System.Windows.Forms.TextBox();
@@ -58,6 +59,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
+            this.groupBox2.Controls.Add(this.cmbsupid);
             this.groupBox2.Controls.Add(this.txtemail);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtcontact);
@@ -77,6 +79,16 @@
             this.groupBox2.Size = new System.Drawing.Size(420, 289);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
+            // 
+            // cmbsupid
+            // 
+            this.cmbsupid.FormattingEnabled = true;
+            this.cmbsupid.Location = new System.Drawing.Point(171, 21);
+            this.cmbsupid.Name = "cmbsupid";
+            this.cmbsupid.Size = new System.Drawing.Size(194, 24);
+            this.cmbsupid.TabIndex = 15;
+            this.cmbsupid.SelectedIndexChanged += new System.EventHandler(this.cmbsupid_SelectedIndexChanged);
+            this.cmbsupid.Click += new System.EventHandler(this.cmbsupid_Click);
             // 
             // txtemail
             // 
@@ -167,7 +179,6 @@
             this.label9.Size = new System.Drawing.Size(97, 18);
             this.label9.TabIndex = 4;
             this.label9.Text = "Company Id";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -220,6 +231,7 @@
             this.btnupdate.TabIndex = 2;
             this.btnupdate.Text = "UPDATE";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btndelete
             // 
@@ -230,6 +242,7 @@
             this.btndelete.TabIndex = 1;
             this.btndelete.Text = "DELETE";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnadd
             // 
@@ -240,6 +253,7 @@
             this.btnadd.TabIndex = 0;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // groupBox3
             // 
@@ -261,6 +275,7 @@
             this.btnsave.TabIndex = 2;
             this.btnsave.Text = "SAVE";
             this.btnsave.UseVisualStyleBackColor = true;
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btncancel
             // 
@@ -271,6 +286,7 @@
             this.btncancel.TabIndex = 1;
             this.btncancel.Text = "CANCEL";
             this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // Supplier
             // 
@@ -281,7 +297,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "Supplier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supplier";
+            this.Load += new System.EventHandler(this.Supplier_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -313,5 +331,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.ComboBox cmbsupid;
     }
 }
