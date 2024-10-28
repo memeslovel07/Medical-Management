@@ -8,6 +8,8 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;
+using Medical_Management.Starting_Page;
 
 namespace Medical_Management
 {
@@ -33,13 +35,16 @@ namespace Medical_Management
             {
                 MessageBox.Show(" Enter  Username");
                 txtusername.Focus();
+                
             }
            else if (objdt.Rows.Count > 0)
             {
                 MessageBox.Show("Welcome");
                 Mainpage homemenu = new Mainpage();
                 homemenu.Show();
-               
+               this.Hide();
+                
+
             }
             
             else
@@ -59,8 +64,10 @@ namespace Medical_Management
         SqlConnection objcon;
         private void Login_Load(object sender, EventArgs e)
         {
+           
             String constr = @"Data Source=.;Initial Catalog=Medicalmanagement;Integrated security=SSPI";
             objcon = new SqlConnection(constr);
         }
+      
     }
 }

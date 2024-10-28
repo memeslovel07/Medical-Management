@@ -36,32 +36,71 @@ namespace Medical_Management
              mode="Add";
             groupBox2.Enabled=true;
             groupBox3.Enabled=true;
+            btnsave.Text = "ADD";
         }
 
         private void btnsave_Click(object sender, EventArgs e)
         {
             if (mode == "Add")
             {
-                objcomm = new SqlCommand("insert into Customer(Customerid,Name,Address,Phonenumber,email) values('"+txtcustid.Text+"','"+txtname.Text+"','"+txtaddress.Text+"','"+txtcontact.Text+"','"+txtemail.Text+"')",objcon);
-                objcon.Open();
-                objcomm.ExecuteNonQuery();
-                objcon.Close();
-                MessageBox.Show("One Record Inserted");
-                txtcustid.Text = "";
-                txtname.Text = "";
-                txtaddress.Text = "";
-                txtcontact.Text = "";
-                txtemail.Text = "";
-                groupBox2.Enabled = false;
-                groupBox3.Enabled = false;
-
+                cmbcusid.Items.Clear();
+                objadpt = new SqlDataAdapter("select * from Customer where Customerid='" + txtcustid.Text + "'", objcon);
+                objdt = new DataTable();
+                objadpt.Fill(objdt);
+                if (objdt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Customer Already Exist...");
+                    txtcustid.Text = "";
+                    txtcustid.Focus();
+                }
+                if (txtcustid.Text == "")
+                {
+                    MessageBox.Show("Enter the CustomerId..");
+                    txtcustid.Focus();
+                }
+                if (txtaddress.Text == "")
+                {
+                    MessageBox.Show("Enter the Customer Address..");
+                    txtaddress.Focus();
+                }
+                if (txtcontact.Text == "")
+                {
+                    MessageBox.Show("Enter the Customer Phone..");
+                    txtcontact.Focus();
+                }
+                if (txtemail.Text == "")
+                {
+                    MessageBox.Show("Enter the Customer Mail..");
+                    txtemail.Focus();
+                }
+                if (txtname.Text == "")
+                {
+                    MessageBox.Show("Enter the Customer Name..");
+                    txtname.Focus();
+                }
+                else
+                {
+                    objcomm = new SqlCommand("insert into Customer(Customerid,Name,Address,Phonenumber,email) values('" + txtcustid.Text + "','" + txtname.Text + "','" + txtaddress.Text + "','" + txtcontact.Text + "','" + txtemail.Text + "')", objcon);
+                    objcon.Open();
+                    objcomm.ExecuteNonQuery();
+                    objcon.Close();
+                    MessageBox.Show("One Record Inserted");
+                    txtcustid.Text = "";
+                    txtname.Text = "";
+                    txtaddress.Text = "";
+                    txtcontact.Text = "";
+                    txtemail.Text = "";
+                    groupBox2.Enabled = false;
+                    groupBox3.Enabled = false;
+                    btnsave.Text = "SAVE";
+                }
             }
             if(mode =="Update")
             {
                 objcomm = new SqlCommand("update Customer set Address='" + txtaddress.Text + "',Phonenumber='"+txtcontact.Text+"',Email='"+txtemail.Text+"' where Customerid='"+cmbcusid.Text+"'", objcon);
                 objcon.Open();
                 objcomm.ExecuteNonQuery ();
-                MessageBox.Show("One Record Inserted");
+                MessageBox.Show("One Record Updated");
                 objcon.Close();
                 txtname.Text = "";
                 txtaddress.Text = "";
@@ -72,13 +111,14 @@ namespace Medical_Management
                 cmbcusid.Text = "";
                 cmbcusid.Visible = false;
                 txtcustid.Visible = true;
+                btnsave.Text = "SAVE";
             }
             if (mode == "Delete")
             {
                 objcomm = new SqlCommand("delete Customer  where Customerid='" + cmbcusid.Text + "'", objcon);
                 objcon.Open();
                 objcomm.ExecuteNonQuery();
-                MessageBox.Show("One Recorded Delete");
+                MessageBox.Show("One Record Delete");
                 objcon.Close();
                 txtname.Text = "";
                 txtaddress.Text = "";
@@ -97,6 +137,7 @@ namespace Medical_Management
                 label3.Visible = true;
                 label4.Visible = true;
                 label5.Visible = true;
+                btnsave.Text = "SAVE";
             }
         }
 
@@ -112,6 +153,7 @@ namespace Medical_Management
             groupBox3.Enabled=true;
             cmbcusid.Visible = true;
             txtcustid.Visible = false;
+            btnsave.Text = "UPDATE";
         }
 
         private void cmbcusid_Click(object sender, EventArgs e)
@@ -148,6 +190,7 @@ namespace Medical_Management
             label3.Visible = false;
             label4.Visible = false;
             label5.Visible = false;
+            btnsave.Text = "DELETE";
 
         }
     }

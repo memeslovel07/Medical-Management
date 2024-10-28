@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbcompid = new System.Windows.Forms.ComboBox();
             this.cmbmedcode = new System.Windows.Forms.ComboBox();
             this.txtdtexp = new System.Windows.Forms.DateTimePicker();
             this.txtdtmanu = new System.Windows.Forms.DateTimePicker();
@@ -36,7 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtprice = new System.Windows.Forms.TextBox();
             this.txtname = new System.Windows.Forms.TextBox();
-            this.txtcompanyid = new System.Windows.Forms.TextBox();
             this.txtmedicinecode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,6 +59,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
+            this.groupBox2.Controls.Add(this.cmbcompid);
             this.groupBox2.Controls.Add(this.cmbmedcode);
             this.groupBox2.Controls.Add(this.txtdtexp);
             this.groupBox2.Controls.Add(this.txtdtmanu);
@@ -66,7 +67,6 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtprice);
             this.groupBox2.Controls.Add(this.txtname);
-            this.groupBox2.Controls.Add(this.txtcompanyid);
             this.groupBox2.Controls.Add(this.txtmedicinecode);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
@@ -79,6 +79,15 @@
             this.groupBox2.Size = new System.Drawing.Size(420, 273);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            // 
+            // cmbcompid
+            // 
+            this.cmbcompid.FormattingEnabled = true;
+            this.cmbcompid.Location = new System.Drawing.Point(177, 82);
+            this.cmbcompid.Name = "cmbcompid";
+            this.cmbcompid.Size = new System.Drawing.Size(194, 24);
+            this.cmbcompid.TabIndex = 18;
+            this.cmbcompid.Click += new System.EventHandler(this.cmbcompid_Click);
             // 
             // cmbmedcode
             // 
@@ -136,13 +145,6 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(194, 22);
             this.txtname.TabIndex = 11;
-            // 
-            // txtcompanyid
-            // 
-            this.txtcompanyid.Location = new System.Drawing.Point(177, 82);
-            this.txtcompanyid.Name = "txtcompanyid";
-            this.txtcompanyid.Size = new System.Drawing.Size(194, 22);
-            this.txtcompanyid.TabIndex = 10;
             // 
             // txtmedicinecode
             // 
@@ -313,7 +315,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtprice;
         private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.TextBox txtcompanyid;
         private System.Windows.Forms.TextBox txtmedicinecode;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -333,5 +334,6 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.ComboBox cmbmedcode;
+        private System.Windows.Forms.ComboBox cmbcompid;
     }
 }

@@ -59,5 +59,15 @@ namespace Medical_Management.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medical_781422_1280_ezgif_com_webp_to_jpg_converter__1_ {
+            get {
+                object obj = ResourceManager.GetObject("medical-781422_1280-ezgif.com-webp-to-jpg-converter (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

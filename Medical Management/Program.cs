@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Medical_Management.Reports.DatewiseReports;
+using Medical_Management.Reports.IdWiseReports;
+using Medical_Management.Reports.NamewiseReports;
+using Medical_Management.Reports.VoucherNumberWise;
+using Medical_Management.Starting_Page;
+using Medical_Management.Transaction_Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +22,8 @@ namespace Medical_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Sale());
         }
     }
 }
+    

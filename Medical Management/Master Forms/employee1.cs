@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Runtime;
 using System.Reflection.Emit;
+using System.Diagnostics.Eventing.Reader;
 
 namespace Medical_Management
 {
@@ -42,26 +43,76 @@ namespace Medical_Management
             mode = "Add";
             groupBox3.Enabled = true;
             groupBox2.Enabled = true;
+            btnsave.Text = "ADD";
         }
 
         private void btnsave_Click(object sender, EventArgs e)
         {
             if(mode =="Add")
             {
-                objcomm = new SqlCommand("insert into Employee(Employeeid,Name,Address,Phonenumber,Email,Designation,Salary) values('"+txtempid.Text+"','"+txtname.Text+"','"+txtaddress.Text+"','"+txtcontact.Text+"','"+txtemail.Text+"','"+txtdesig.Text+"','"+txtsalary.Text+"')", objcon);
-                objcon.Open();
-                objcomm.ExecuteNonQuery();
-                objcon.Close();
-                MessageBox.Show("One Record Inserted");
-                txtempid.Text = "";
-                txtname.Text = "";
-                txtaddress.Text = "";
-                txtcontact.Text ="";
-                txtemail.Text = "";
-                txtdesig.Text = "";
-                txtsalary.Text = "";
-                groupBox2.Enabled = false;
-            groupBox3.Enabled = false;
+                objadpt = new SqlDataAdapter("select * from Employee where Employeeid='" + txtempid.Text + "'", objcon);
+                objdt = new DataTable();
+                objadpt.Fill(objdt);
+                if (objdt.Rows.Count > 0)
+                {
+                    MessageBox.Show("EmployeeId Already Exist...");
+                    txtempid.Text = "";
+                    txtempid.Focus();
+                }
+                if (txtempid.Text == "")
+                {
+                    MessageBox.Show("Enter the Employeeid..");
+                    txtempid.Focus();
+                }
+                if (txtaddress.Text == "")
+                {
+                    MessageBox.Show("Enter the Employee Address..");
+                    txtaddress.Focus();
+                }
+                if (txtcontact.Text == "")
+                {
+                    MessageBox.Show("Enter the Employee Phone..");
+                    txtcontact.Focus();
+                }
+                if (txtemail.Text == "")
+                {
+                    MessageBox.Show("Enter the Employee Mail..");
+                    txtemail.Focus();
+                }
+                if (txtname.Text == "")
+                {
+                    MessageBox.Show("Enter the Employee Name..");
+                    txtname.Focus();
+                }
+                if (txtsalary.Text == "")
+                {
+                    MessageBox.Show("Enter the Employee Salary..");
+                    txtsalary.Focus();
+                }
+                if (txtdesig.Text == "")
+                {
+                    MessageBox.Show("Enter the Employee Dedignstion..");
+                    txtdesig.Focus();
+                }
+
+                else
+                {
+                    objcomm = new SqlCommand("insert into Employee(Employeeid,Name,Address,Phonenumber,Email,Designation,Salary) values('" + txtempid.Text + "','" + txtname.Text + "','" + txtaddress.Text + "','" + txtcontact.Text + "','" + txtemail.Text + "','" + txtdesig.Text + "','" + txtsalary.Text + "')", objcon);
+                    objcon.Open();
+                    objcomm.ExecuteNonQuery();
+                    objcon.Close();
+                    MessageBox.Show("One Record Inserted");
+                    txtempid.Text = "";
+                    txtname.Text = "";
+                    txtaddress.Text = "";
+                    txtcontact.Text = "";
+                    txtemail.Text = "";
+                    txtdesig.Text = "";
+                    txtsalary.Text = "";
+                    groupBox2.Enabled = false;
+                    groupBox3.Enabled = false;
+                    btnsave.Text = "SAVE";
+                }
             }
             if (mode == "Update")
             {
@@ -81,6 +132,7 @@ namespace Medical_Management
                 groupBox3.Enabled = false;
                 cmbempid.Visible = false;
                 txtempid.Visible = true;
+                btnsave.Text = "SAVE";
             }
             if(mode =="Delete")
             {
@@ -110,6 +162,7 @@ namespace Medical_Management
                 txtcontact.Text = "";
                 txtemail.Text = "";
                 txtdesig.Text = "";
+                btnsave.Text = "SAVE";
                 txtsalary.Text = "";
             }
         }
@@ -121,6 +174,7 @@ namespace Medical_Management
             groupBox3.Enabled=true;
             cmbempid.Visible = true;
             txtempid.Visible = false;
+            btnsave.Text = "UPDATE";
         }
 
         private void cmbempid_Click(object sender, EventArgs e)
@@ -163,7 +217,8 @@ namespace Medical_Management
             label10.Visible = false;
             label11.Visible = false;
             label13.Visible = false;
-            label2.Visible = false; 
+            label2.Visible = false;
+            btnsave.Text = "DELETE";
         }
     }
 }

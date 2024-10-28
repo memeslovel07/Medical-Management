@@ -28,8 +28,9 @@ namespace Medical_Management
             groupBox3.Enabled = false; 
             objcon = new SqlConnection(constr); 
             cmbcomid.Visible= false;
-            
            
+
+
         }
         string mode;
 
@@ -38,48 +39,94 @@ namespace Medical_Management
             mode = "Add";
             groupBox2.Enabled = true;
             groupBox3.Enabled = true;
+            btnsave.Text = "ADD";
         }
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            if (mode== "Add")
+            if (mode == "Add")
             {
-objcomm = new SqlCommand("insert into Company(Companyid,Companyname,Address,Phonenumber,Email,Website) values('" + txtcomid.Text+"','"+txtname.Text+ "','"+txtaddress.Text+"','"+txtcontact.Text+"','"+txtemail.Text+"','"+txtwebsite.Text+"')", objcon);
-                objcon.Open();
-                objcomm.ExecuteNonQuery();
-                objcon.Close();
-                MessageBox.Show("One Record Inserted. ");
-                txtcomid.Text = "";
-                txtname.Text = "";
-                txtaddress.Text = "";
-                txtcontact.Text = "";
-                txtemail.Text = "";
-                txtwebsite.Text = "";
-                groupBox2.Enabled=false;
-                groupBox3.Enabled=false;
+                cmbcomid.Items.Clear();
+                objadt = new SqlDataAdapter("select * from Company where Companyid='"+txtcomid.Text+"'", objcon);
+                objdt = new DataTable();
+                objadt.Fill(objdt);
+                if (objdt.Rows.Count > 0)
+                {
+                    MessageBox.Show("CompanyId Already Exist...");
+                    txtcomid.Text = "";
+                    txtcomid.Focus();
+                }
+                if (txtcomid.Text == "")
+                {
+                    MessageBox.Show("Enter the CompanyId..");
+                    txtcomid.Focus();
+                }
+                if (txtaddress.Text == "")
+                {
+                    MessageBox.Show("Enter the Company Address..");
+                    txtaddress.Focus();
+                }
+                if (txtcontact.Text == "")
+                {
+                    MessageBox.Show("Enter the Company Phone..");
+                    txtcontact.Focus();
+                }
+                if (txtemail.Text == "")
+                {
+                    MessageBox.Show("Enter the Company Mail..");
+                    txtemail.Focus();
+                }
+                if (txtname.Text == "")
+                {
+                    MessageBox.Show("Enter the Company Name..");
+                    txtname.Focus();
+                }
+                if (txtwebsite.Text == "")
+                {
+                    MessageBox.Show("Enter the Company Website..");
+                    txtwebsite.Focus();
+                }
+                else
+                {
+                    objcomm = new SqlCommand("insert into Company(Companyid,Companyname,Address,Phonenumber,Email,Website) values('" + txtcomid.Text + "','" + txtname.Text + "','" + txtaddress.Text + "','" + txtcontact.Text + "','" + txtemail.Text + "','" + txtwebsite.Text + "')", objcon);
+                    objcon.Open();
+                    objcomm.ExecuteNonQuery();
+                    objcon.Close();
+                    MessageBox.Show("One Record Inserted. ");
+                    txtcomid.Text = "";
+                    txtname.Text = "";
+                    txtaddress.Text = "";
+                    txtcontact.Text = "";
+                    txtemail.Text = "";
+                    txtwebsite.Text = "";
+                    groupBox2.Enabled = false;
+                    groupBox3.Enabled = false;
+                    btnsave.Text = "SAVE";
+                }
             }
-            if(mode=="Update")
+            if (mode == "Update")
             {
-                objcomm = new SqlCommand("update Company set Address='" + txtaddress.Text + "',Phonenumber='"+txtcontact.Text+"',Email='"+txtemail.Text+"',Website='"+txtwebsite.Text+"' where Companyid='"+cmbcomid.Text+"'", objcon);
-                objcon.Open();
-                objcomm.ExecuteNonQuery();
-                MessageBox.Show("One Record Updated");
-                objcon.Close();
-                txtname.Text = "";
-                txtaddress.Text = "";
-                txtcontact.Text = "";
-                txtemail.Text = "";
-                txtwebsite.Text = "";
-                groupBox2.Enabled = false;
-                groupBox3.Enabled = false;
-                cmbcomid.Text = "";
-                cmbcomid.Visible= false;
-                txtcomid.Visible = true;
+                  objcomm = new SqlCommand("update Company set Address='" + txtaddress.Text + "',Phonenumber='" + txtcontact.Text + "',Email='" + txtemail.Text + "',Website='" + txtwebsite.Text + "' where Companyid='" + cmbcomid.Text + "'", objcon);
+                  objcon.Open();
+                  objcomm.ExecuteNonQuery();
+                  MessageBox.Show("One Record Updated");
+                  objcon.Close();
+                  txtname.Text = "";
+                  txtaddress.Text = "";
+                  txtcontact.Text = "";
+                  txtemail.Text = "";
+                  txtwebsite.Text = "";
+                  groupBox2.Enabled = false;
+                  groupBox3.Enabled = false;
+                  cmbcomid.Text = "";
+                  cmbcomid.Visible = false;
+                  txtcomid.Visible = true;
+                btnsave.Text = "SAVE";
 
             }
-            if(mode=="Delete")
+            if (mode == "Delete")
             {
-                objcomm = new SqlCommand("delete Company  where Companyid='" + cmbcomid.Text + "'", objcon);
+              objcomm = new SqlCommand("delete Company  where Companyid='" + cmbcomid.Text + "'", objcon);
                 objcon.Open();
                 objcomm.ExecuteNonQuery();
                 MessageBox.Show("One Recorded Delete");
@@ -100,11 +147,12 @@ objcomm = new SqlCommand("insert into Company(Companyid,Companyname,Address,Phon
                 txtemail.Visible = true;
                 txtwebsite.Visible = true;
                 txtname.Enabled = true;
-                label3.Visible = true;
-                label4.Visible = true;
-                label5.Visible = true;
-                label7.Visible = true;
-                
+              label3.Visible = true;
+              label4.Visible = true;
+              label5.Visible = true;
+              label7.Visible = true;
+                btnsave.Text = "SAVE";
+
             }
         }
 
@@ -120,6 +168,7 @@ objcomm = new SqlCommand("insert into Company(Companyid,Companyname,Address,Phon
             groupBox3.Enabled = true;
             cmbcomid.Visible = true;
             txtcomid.Visible = false;
+            btnsave.Text = "UPDATE";
         }
 
         private void cmbcomid_Click(object sender, EventArgs e)
@@ -160,7 +209,10 @@ objcomm = new SqlCommand("insert into Company(Companyid,Companyname,Address,Phon
             label4.Visible = false;
             label5.Visible = false;
             label7.Visible = false;
+            btnsave.Text = "DELETE";
 
         }
+
+        
     }
 }

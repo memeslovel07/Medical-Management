@@ -34,9 +34,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtcontact = new System.Windows.Forms.TextBox();
             this.txtsupplier = new System.Windows.Forms.TextBox();
-            this.txtcompanyid = new System.Windows.Forms.TextBox();
             this.txtaddress = new System.Windows.Forms.TextBox();
-            this.txtmedicinecode = new System.Windows.Forms.TextBox();
             this.txtSupplierid = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,6 +49,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnsave = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
+            this.cmbcompid = new System.Windows.Forms.ComboBox();
+            this.cmbmedcode = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,14 +59,14 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Gray;
+            this.groupBox2.Controls.Add(this.cmbmedcode);
+            this.groupBox2.Controls.Add(this.cmbcompid);
             this.groupBox2.Controls.Add(this.cmbsupid);
             this.groupBox2.Controls.Add(this.txtemail);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.txtcontact);
             this.groupBox2.Controls.Add(this.txtsupplier);
-            this.groupBox2.Controls.Add(this.txtcompanyid);
             this.groupBox2.Controls.Add(this.txtaddress);
-            this.groupBox2.Controls.Add(this.txtmedicinecode);
             this.groupBox2.Controls.Add(this.txtSupplierid);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label8);
@@ -121,27 +121,12 @@
             this.txtsupplier.Size = new System.Drawing.Size(194, 22);
             this.txtsupplier.TabIndex = 11;
             // 
-            // txtcompanyid
-            // 
-            this.txtcompanyid.Location = new System.Drawing.Point(171, 88);
-            this.txtcompanyid.Multiline = true;
-            this.txtcompanyid.Name = "txtcompanyid";
-            this.txtcompanyid.Size = new System.Drawing.Size(194, 22);
-            this.txtcompanyid.TabIndex = 10;
-            // 
             // txtaddress
             // 
             this.txtaddress.Location = new System.Drawing.Point(171, 159);
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(194, 22);
             this.txtaddress.TabIndex = 9;
-            // 
-            // txtmedicinecode
-            // 
-            this.txtmedicinecode.Location = new System.Drawing.Point(171, 124);
-            this.txtmedicinecode.Name = "txtmedicinecode";
-            this.txtmedicinecode.Size = new System.Drawing.Size(194, 22);
-            this.txtmedicinecode.TabIndex = 8;
             // 
             // txtSupplierid
             // 
@@ -288,6 +273,24 @@
             this.btncancel.UseVisualStyleBackColor = true;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
+            // cmbcompid
+            // 
+            this.cmbcompid.FormattingEnabled = true;
+            this.cmbcompid.Location = new System.Drawing.Point(171, 86);
+            this.cmbcompid.Name = "cmbcompid";
+            this.cmbcompid.Size = new System.Drawing.Size(194, 24);
+            this.cmbcompid.TabIndex = 19;
+            this.cmbcompid.Click += new System.EventHandler(this.cmbcompid_Click);
+            // 
+            // cmbmedcode
+            // 
+            this.cmbmedcode.FormattingEnabled = true;
+            this.cmbmedcode.Location = new System.Drawing.Point(171, 122);
+            this.cmbmedcode.Name = "cmbmedcode";
+            this.cmbmedcode.Size = new System.Drawing.Size(194, 24);
+            this.cmbmedcode.TabIndex = 20;
+            this.cmbmedcode.Click += new System.EventHandler(this.cmbmedcode_Click);
+            // 
             // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,9 +317,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtcontact;
         private System.Windows.Forms.TextBox txtsupplier;
-        private System.Windows.Forms.TextBox txtcompanyid;
         private System.Windows.Forms.TextBox txtaddress;
-        private System.Windows.Forms.TextBox txtmedicinecode;
         private System.Windows.Forms.TextBox txtSupplierid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
@@ -332,5 +333,7 @@
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.ComboBox cmbsupid;
+        private System.Windows.Forms.ComboBox cmbcompid;
+        private System.Windows.Forms.ComboBox cmbmedcode;
     }
 }

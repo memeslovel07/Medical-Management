@@ -54,6 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Starting Page\Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Starting Page\Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master Forms\Company.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,16 +90,16 @@
     <Compile Include="Master Forms\Medicine.Designer.cs">
       <DependentUpon>Medicine.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="user\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="user\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mainpage.cs">
+    <Compile Include="Home Page\Mainpage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mainpage.Designer.cs">
+    <Compile Include="Home Page\Mainpage.Designer.cs">
       <DependentUpon>Mainpage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -103,11 +115,113 @@
     <Compile Include="Master Forms\Supplier.Designer.cs">
       <DependentUpon>Supplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\DatewiseReports\DatewiseMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\DatewiseReports\DatewiseMedicine.Designer.cs">
+      <DependentUpon>DatewiseMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DatewiseReports\Datewisepurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\DatewiseReports\Datewisepurchase.Designer.cs">
+      <DependentUpon>Datewisepurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DatewiseReports\DatewiseSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\DatewiseReports\DatewiseSalary.Designer.cs">
+      <DependentUpon>DatewiseSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DatewiseReports\DatewiseSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\DatewiseReports\DatewiseSale.Designer.cs">
+      <DependentUpon>DatewiseSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseCustomer.Designer.cs">
+      <DependentUpon>idwiseCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseCompany.Designer.cs">
+      <DependentUpon>idwiseCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseEmployee.Designer.cs">
+      <DependentUpon>idwiseEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseMedicine.Designer.cs">
+      <DependentUpon>idwiseMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\IdWiseReports\idwiseSupplier.Designer.cs">
+      <DependentUpon>idwiseSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseCompany.Designer.cs">
+      <DependentUpon>NamewiseCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseCustomer.Designer.cs">
+      <DependentUpon>NamewiseCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseEmployee.Designer.cs">
+      <DependentUpon>NamewiseEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseMedicine.Designer.cs">
+      <DependentUpon>NamewiseMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\NamewiseReports\NamewiseSupplier.Designer.cs">
+      <DependentUpon>NamewiseSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VoucherNumberWise\VoucherwisePurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\VoucherNumberWise\VoucherwisePurchase.Designer.cs">
+      <DependentUpon>VoucherwisePurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VoucherNumberWise\VoucherwiseSalecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\VoucherNumberWise\VoucherwiseSalecs.Designer.cs">
+      <DependentUpon>VoucherwiseSalecs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transaction Forms\Purchase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transaction Forms\Purchase.Designer.cs">
       <DependentUpon>Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction Forms\Salary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction Forms\Salary.Designer.cs">
+      <DependentUpon>Salary.cs</DependentUpon>
     </Compile>
     <Compile Include="Transaction Forms\Sale.cs">
       <SubType>Form</SubType>
@@ -115,6 +229,18 @@
     <Compile Include="Transaction Forms\Sale.Designer.cs">
       <DependentUpon>Sale.cs</DependentUpon>
     </Compile>
+    <Compile Include="user\Newuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user\Newuser.Designer.cs">
+      <DependentUpon>Newuser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Starting Page\Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master Forms\Company.resx">
       <DependentUpon>Company.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,10 +250,10 @@
     <EmbeddedResource Include="Master Forms\employee1.resx">
       <DependentUpon>employee1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="user\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mainpage.resx">
+    <EmbeddedResource Include="Home Page\Mainpage.resx">
       <DependentUpon>Mainpage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master Forms\Medicine.resx">
@@ -141,11 +267,65 @@
     <EmbeddedResource Include="Master Forms\Supplier.resx">
       <DependentUpon>Supplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DatewiseReports\DatewiseMedicine.resx">
+      <DependentUpon>DatewiseMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DatewiseReports\Datewisepurchase.resx">
+      <DependentUpon>Datewisepurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DatewiseReports\DatewiseSalary.resx">
+      <DependentUpon>DatewiseSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DatewiseReports\DatewiseSale.resx">
+      <DependentUpon>DatewiseSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IdWiseReports\idwiseCustomer.resx">
+      <DependentUpon>idwiseCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IdWiseReports\idwiseCompany.resx">
+      <DependentUpon>idwiseCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IdWiseReports\idwiseEmployee.resx">
+      <DependentUpon>idwiseEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IdWiseReports\idwiseMedicine.resx">
+      <DependentUpon>idwiseMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IdWiseReports\idwiseSupplier.resx">
+      <DependentUpon>idwiseSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NamewiseReports\NamewiseCompany.resx">
+      <DependentUpon>NamewiseCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NamewiseReports\NamewiseCustomer.resx">
+      <DependentUpon>NamewiseCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NamewiseReports\NamewiseEmployee.resx">
+      <DependentUpon>NamewiseEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NamewiseReports\NamewiseMedicine.resx">
+      <DependentUpon>NamewiseMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\NamewiseReports\NamewiseSupplier.resx">
+      <DependentUpon>NamewiseSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VoucherNumberWise\VoucherwisePurchase.resx">
+      <DependentUpon>VoucherwisePurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VoucherNumberWise\VoucherwiseSalecs.resx">
+      <DependentUpon>VoucherwiseSalecs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaction Forms\Purchase.resx">
       <DependentUpon>Purchase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaction Forms\Salary.resx">
+      <DependentUpon>Salary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transaction Forms\Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user\Newuser.resx">
+      <DependentUpon>Newuser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,6 +340,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\medical-781422_1280-ezgif.com-webp-to-jpg-converter %281%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
