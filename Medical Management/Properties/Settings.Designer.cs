@@ -22,5 +22,16 @@ namespace Medical_Management.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Medicalmanagement;Integrated Security=True;Encrypt=" +
+            "False;TrustServerCertificate=True")]
+        public string MedicalmanagementConnectionString {
+            get {
+                return ((string)(this["MedicalmanagementConnectionString"]));
+            }
+        }
     }
 }
