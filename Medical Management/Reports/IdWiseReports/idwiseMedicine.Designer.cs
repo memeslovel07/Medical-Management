@@ -165,6 +165,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "idwiseMedicine";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "idwiseMedicine";
             this.Load += new System.EventHandler(this.idwiseMedicine_Load);
             this.groupBox1.ResumeLayout(false);
