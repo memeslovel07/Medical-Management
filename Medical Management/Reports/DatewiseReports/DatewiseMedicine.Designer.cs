@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnviewall = new System.Windows.Forms.RadioButton();
             this.rbtndatewise = new System.Windows.Forms.RadioButton();
+            this.rbtnviewall = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnshow = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
+            this.btnshow = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,18 +57,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // rbtnviewall
-            // 
-            this.rbtnviewall.AutoSize = true;
-            this.rbtnviewall.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnviewall.Location = new System.Drawing.Point(19, 23);
-            this.rbtnviewall.Name = "rbtnviewall";
-            this.rbtnviewall.Size = new System.Drawing.Size(86, 22);
-            this.rbtnviewall.TabIndex = 0;
-            this.rbtnviewall.TabStop = true;
-            this.rbtnviewall.Text = "View all";
-            this.rbtnviewall.UseVisualStyleBackColor = true;
-            // 
             // rbtndatewise
             // 
             this.rbtndatewise.AutoSize = true;
@@ -81,6 +69,18 @@
             this.rbtndatewise.Text = "Date Wise";
             this.rbtndatewise.UseVisualStyleBackColor = true;
             this.rbtndatewise.CheckedChanged += new System.EventHandler(this.rbtndatewise_CheckedChanged);
+            // 
+            // rbtnviewall
+            // 
+            this.rbtnviewall.AutoSize = true;
+            this.rbtnviewall.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnviewall.Location = new System.Drawing.Point(19, 23);
+            this.rbtnviewall.Name = "rbtnviewall";
+            this.rbtnviewall.Size = new System.Drawing.Size(86, 22);
+            this.rbtnviewall.TabIndex = 0;
+            this.rbtnviewall.TabStop = true;
+            this.rbtnviewall.Text = "View all";
+            this.rbtnviewall.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -95,15 +95,31 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Date From";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 61);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(525, 204);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(390, 24);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(114, 22);
+            this.dateTimePicker2.TabIndex = 3;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 24);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(120, 22);
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // label2
             // 
@@ -115,31 +131,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Date To";
             // 
-            // dateTimePicker1
+            // label1
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(120, 22);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(390, 24);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(114, 22);
-            this.dateTimePicker2.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 61);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(525, 204);
-            this.dataGridView1.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Date From";
             // 
             // groupBox3
             // 
@@ -152,17 +152,6 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
-            // btnshow
-            // 
-            this.btnshow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnshow.Location = new System.Drawing.Point(20, 15);
-            this.btnshow.Name = "btnshow";
-            this.btnshow.Size = new System.Drawing.Size(114, 36);
-            this.btnshow.TabIndex = 0;
-            this.btnshow.Text = "Show";
-            this.btnshow.UseVisualStyleBackColor = true;
-            this.btnshow.Click += new System.EventHandler(this.btnshow_Click);
-            // 
             // btncancel
             // 
             this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,6 +163,17 @@
             this.btncancel.UseVisualStyleBackColor = true;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
+            // btnshow
+            // 
+            this.btnshow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnshow.Location = new System.Drawing.Point(20, 15);
+            this.btnshow.Name = "btnshow";
+            this.btnshow.Size = new System.Drawing.Size(114, 36);
+            this.btnshow.TabIndex = 0;
+            this.btnshow.Text = "Show";
+            this.btnshow.UseVisualStyleBackColor = true;
+            this.btnshow.Click += new System.EventHandler(this.btnshow_Click);
+            // 
             // DatewiseMedicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -183,6 +183,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "DatewiseMedicine";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DatewiseMedicine";
             this.Load += new System.EventHandler(this.DatewiseMedicine_Load);
             this.groupBox1.ResumeLayout(false);

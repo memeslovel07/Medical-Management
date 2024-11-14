@@ -55,13 +55,13 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnremove = new System.Windows.Forms.Button();
+            this.btnlsadd = new System.Windows.Forms.Button();
+            this.lstamt = new System.Windows.Forms.ListBox();
+            this.lstquantity = new System.Windows.Forms.ListBox();
+            this.lstprice = new System.Windows.Forms.ListBox();
+            this.lstmedcode = new System.Windows.Forms.ListBox();
+            this.lstcompid = new System.Windows.Forms.ListBox();
             this.txtprice = new System.Windows.Forms.TextBox();
             this.txtquantity = new System.Windows.Forms.TextBox();
             this.txtamountls = new System.Windows.Forms.TextBox();
@@ -76,7 +76,7 @@
             this.btnadd = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnexit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -105,11 +105,12 @@
             this.cmbvounum.Size = new System.Drawing.Size(152, 24);
             this.cmbvounum.TabIndex = 4;
             this.cmbvounum.SelectedIndexChanged += new System.EventHandler(this.cmbvounum_SelectedIndexChanged);
+            this.cmbvounum.Click += new System.EventHandler(this.cmbvounum_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(546, 19);
+            this.dateTimePicker1.Location = new System.Drawing.Point(546, 20);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(160, 22);
             this.dateTimePicker1.TabIndex = 3;
@@ -293,13 +294,13 @@
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.listBox5);
-            this.groupBox3.Controls.Add(this.listBox4);
-            this.groupBox3.Controls.Add(this.listBox3);
-            this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Controls.Add(this.listBox1);
+            this.groupBox3.Controls.Add(this.btnremove);
+            this.groupBox3.Controls.Add(this.btnlsadd);
+            this.groupBox3.Controls.Add(this.lstamt);
+            this.groupBox3.Controls.Add(this.lstquantity);
+            this.groupBox3.Controls.Add(this.lstprice);
+            this.groupBox3.Controls.Add(this.lstmedcode);
+            this.groupBox3.Controls.Add(this.lstcompid);
             this.groupBox3.Controls.Add(this.txtprice);
             this.groupBox3.Controls.Add(this.txtquantity);
             this.groupBox3.Controls.Add(this.txtamountls);
@@ -322,6 +323,7 @@
             this.txtdiscount.Name = "txtdiscount";
             this.txtdiscount.Size = new System.Drawing.Size(136, 22);
             this.txtdiscount.TabIndex = 33;
+            this.txtdiscount.TextChanged += new System.EventHandler(this.txtdiscount_TextChanged);
             // 
             // txtfinalamt
             // 
@@ -367,70 +369,77 @@
             this.label13.TabIndex = 26;
             this.label13.Text = "Final Amount";
             // 
-            // button2
+            // btnremove
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(783, 166);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 33);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Remove";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnremove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnremove.Location = new System.Drawing.Point(783, 166);
+            this.btnremove.Name = "btnremove";
+            this.btnremove.Size = new System.Drawing.Size(95, 33);
+            this.btnremove.TabIndex = 25;
+            this.btnremove.Text = "Remove";
+            this.btnremove.UseVisualStyleBackColor = true;
+            this.btnremove.Click += new System.EventHandler(this.btnremove_Click);
             // 
-            // button1
+            // btnlsadd
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(783, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 33);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnlsadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlsadd.Location = new System.Drawing.Point(783, 112);
+            this.btnlsadd.Name = "btnlsadd";
+            this.btnlsadd.Size = new System.Drawing.Size(95, 33);
+            this.btnlsadd.TabIndex = 24;
+            this.btnlsadd.Text = "Add";
+            this.btnlsadd.UseVisualStyleBackColor = true;
+            this.btnlsadd.Click += new System.EventHandler(this.btnlsadd_Click);
             // 
-            // listBox5
+            // lstamt
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 16;
-            this.listBox5.Location = new System.Drawing.Point(628, 98);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(149, 148);
-            this.listBox5.TabIndex = 23;
+            this.lstamt.FormattingEnabled = true;
+            this.lstamt.ItemHeight = 16;
+            this.lstamt.Location = new System.Drawing.Point(628, 98);
+            this.lstamt.Name = "lstamt";
+            this.lstamt.Size = new System.Drawing.Size(149, 148);
+            this.lstamt.TabIndex = 23;
+            this.lstamt.SelectedIndexChanged += new System.EventHandler(this.lstamt_SelectedIndexChanged);
             // 
-            // listBox4
+            // lstquantity
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 16;
-            this.listBox4.Location = new System.Drawing.Point(473, 98);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(149, 148);
-            this.listBox4.TabIndex = 22;
+            this.lstquantity.FormattingEnabled = true;
+            this.lstquantity.ItemHeight = 16;
+            this.lstquantity.Location = new System.Drawing.Point(473, 98);
+            this.lstquantity.Name = "lstquantity";
+            this.lstquantity.Size = new System.Drawing.Size(149, 148);
+            this.lstquantity.TabIndex = 22;
+            this.lstquantity.SelectedIndexChanged += new System.EventHandler(this.lstquantity_SelectedIndexChanged);
             // 
-            // listBox3
+            // lstprice
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 16;
-            this.listBox3.Location = new System.Drawing.Point(318, 98);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(149, 148);
-            this.listBox3.TabIndex = 21;
+            this.lstprice.FormattingEnabled = true;
+            this.lstprice.ItemHeight = 16;
+            this.lstprice.Location = new System.Drawing.Point(318, 98);
+            this.lstprice.Name = "lstprice";
+            this.lstprice.Size = new System.Drawing.Size(149, 148);
+            this.lstprice.TabIndex = 21;
+            this.lstprice.SelectedIndexChanged += new System.EventHandler(this.lstprice_SelectedIndexChanged);
             // 
-            // listBox2
+            // lstmedcode
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(163, 98);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(149, 148);
-            this.listBox2.TabIndex = 20;
+            this.lstmedcode.FormattingEnabled = true;
+            this.lstmedcode.ItemHeight = 16;
+            this.lstmedcode.Location = new System.Drawing.Point(163, 98);
+            this.lstmedcode.Name = "lstmedcode";
+            this.lstmedcode.Size = new System.Drawing.Size(149, 148);
+            this.lstmedcode.TabIndex = 20;
+            this.lstmedcode.SelectedIndexChanged += new System.EventHandler(this.lstmedcode_SelectedIndexChanged);
             // 
-            // listBox1
+            // lstcompid
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(6, 98);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(149, 148);
-            this.listBox1.TabIndex = 19;
+            this.lstcompid.FormattingEnabled = true;
+            this.lstcompid.ItemHeight = 16;
+            this.lstcompid.Location = new System.Drawing.Point(6, 98);
+            this.lstcompid.Name = "lstcompid";
+            this.lstcompid.Size = new System.Drawing.Size(149, 148);
+            this.lstcompid.TabIndex = 19;
+            this.lstcompid.SelectedIndexChanged += new System.EventHandler(this.lstcompid_SelectedIndexChanged);
             // 
             // txtprice
             // 
@@ -445,6 +454,7 @@
             this.txtquantity.Name = "txtquantity";
             this.txtquantity.Size = new System.Drawing.Size(107, 22);
             this.txtquantity.TabIndex = 17;
+            this.txtquantity.Text = " ";
             this.txtquantity.TextChanged += new System.EventHandler(this.txtquantity_TextChanged);
             // 
             // txtamountls
@@ -529,7 +539,7 @@
             this.groupBox4.Controls.Add(this.btnadd);
             this.groupBox4.Controls.Add(this.btnupdate);
             this.groupBox4.Controls.Add(this.btnsave);
-            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.btnexit);
             this.groupBox4.Location = new System.Drawing.Point(12, 644);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(884, 67);
@@ -570,15 +580,16 @@
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
-            // button3
+            // btnexit
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(383, 17);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 33);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnexit.Location = new System.Drawing.Point(383, 17);
+            this.btnexit.Name = "btnexit";
+            this.btnexit.Size = new System.Drawing.Size(95, 33);
+            this.btnexit.TabIndex = 25;
+            this.btnexit.Text = "Exit";
+            this.btnexit.UseVisualStyleBackColor = true;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // Sale
             // 
@@ -589,7 +600,10 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Sale";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sale";
             this.Load += new System.EventHandler(this.Sale_Load);
             this.groupBox1.ResumeLayout(false);
@@ -632,11 +646,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtamountls;
-        private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstamt;
+        private System.Windows.Forms.ListBox lstquantity;
+        private System.Windows.Forms.ListBox lstprice;
+        private System.Windows.Forms.ListBox lstmedcode;
+        private System.Windows.Forms.ListBox lstcompid;
         private System.Windows.Forms.TextBox txtprice;
         private System.Windows.Forms.TextBox txtquantity;
         private System.Windows.Forms.TextBox txtdiscount;
@@ -645,13 +659,13 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnremove;
+        private System.Windows.Forms.Button btnlsadd;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.ComboBox cmbvounum;
         private System.Windows.Forms.ComboBox cmbcustid;
     }

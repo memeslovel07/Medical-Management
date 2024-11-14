@@ -164,6 +164,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "VoucherwiseSalecs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VoucherwiseSalecs";
             this.Load += new System.EventHandler(this.VoucherwiseSalecs_Load);
             this.groupBox1.ResumeLayout(false);

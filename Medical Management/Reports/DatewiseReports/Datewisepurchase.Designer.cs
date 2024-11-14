@@ -183,6 +183,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Datewisepurchase";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datewisepurchase";
             this.Load += new System.EventHandler(this.Datewisepurchase_Load);
             this.groupBox1.ResumeLayout(false);

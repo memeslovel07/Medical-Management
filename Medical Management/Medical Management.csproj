@@ -54,6 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MedicalmanagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedicalmanagementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Starting Page\Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,6 +332,17 @@
     <EmbeddedResource Include="user\Newuser.resx">
       <DependentUpon>Newuser.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MedicalmanagementDataSet.xsc">
+      <DependentUpon>MedicalmanagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MedicalmanagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MedicalmanagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MedicalmanagementDataSet.xss">
+      <DependentUpon>MedicalmanagementDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
