@@ -20,7 +20,11 @@ namespace Medical_Management.Transaction_Forms
         }
         SqlConnection objcon;
         SqlDataAdapter objadpt;
+
         DataTable objdt,objdt1;
+
+       // DataTable objdt;
+
         SqlCommand objcomm;
         private void Purchase_Load(object sender, EventArgs e)
         {
@@ -30,8 +34,10 @@ namespace Medical_Management.Transaction_Forms
             groupBox2.Enabled = false;
             groupBox3.Enabled = false;
             cmbvounum.Visible = false;
+
             txttotalamt.Text = "0";
             txtdiscount.Text = "0";
+
         }
         string mode;
 
@@ -58,6 +64,7 @@ namespace Medical_Management.Transaction_Forms
             if (mode == "Add")
             {
                 objcon.Open();
+
                 objcomm = new SqlCommand("insert into purchase(Vouchernumber,Voucherdate,Supplierid,Totalamount,Discount,Finalamount) values('" + txtvounum.Text + "','" + dateTimePicker1.Text + "','" + txtsupid.Text + "','" + txttotalamt.Text + "','" + txtdiscount.Text + "','" + txtfinalamt.Text + "')", objcon);
                 int i;
                 for (i = 0; i < lstcompid.Items.Count; i++)
@@ -69,14 +76,25 @@ namespace Medical_Management.Transaction_Forms
                 objcon.Close();
                 MessageBox.Show("Purchase Record Inserted");
 
+
+             /*   objcomm = new SqlCommand("insert into supplier(Supplierid,Suppliername,Companyid,Medichinecode,Address,Phone,Email) values('" + txtsupid.Text + "','" + txtname.Text + "','" + cmbcomid.Text + "','" + cmbmedcodesu.Text + "','" + txtaddress.Text + "','" + txtphone.Text + "','" + txtemail.Text + "')", objcon);
+               
+
                 objcomm.ExecuteNonQuery();
-                MessageBox.Show("One Record Inserted");
+                MessageBox.Show("One Record Inserted");*/
                 txtsupid.Text = "";
                 txtname.Text = "";
                 txtaddress.Text = "";
                 txtphone.Text = "";
                 txtemail.Text = "";
 
+
+
+
+              /*   objcomm = new SqlCommand("insert into purchase(Vouchernumber,Voucherdate,Supplierid,Totalamount,Discount,Finalamount) values('" + txtvounum.Text + "','" + dateTimePicker1.Text + "','" + txtsupid.Text + "','" + txttotalamt.Text + "','" + txtdiscount.Text + "','" + txtfinalamt.Text + "')", objcon);
+                  objcomm.ExecuteNonQuery();
+                  objcon.Close();
+                  MessageBox.Show("Purchase Record Inserted");*/
 
 
             }
@@ -124,6 +142,7 @@ namespace Medical_Management.Transaction_Forms
 
         private void txtquantity_TextChanged(object sender, EventArgs e)
         {
+
             if (txtquantity.Text == "")
             {
                 txtquantity.Text = "0";
@@ -132,10 +151,14 @@ namespace Medical_Management.Transaction_Forms
             {
                 txtamt.Text = Convert.ToString(Convert.ToDouble(txtutprice.Text) * Convert.ToDouble(txtquantity.Text));
             }
+
+            txtamt.Text = Convert.ToString(Convert.ToDouble(txtutprice.Text) * Convert.ToDouble(txtquantity.Text));
+
         }
 
         private void cmbvounum_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             dateTimePicker1.Text = objdt.Rows[cmbvounum.SelectedIndex]["Voucherdate"].ToString();
             txtsupid.Text = objdt.Rows[cmbvounum.SelectedIndex]["supplierid"].ToString();
             txttotalamt.Text = objdt.Rows[cmbvounum.SelectedIndex]["Totalamount"].ToString();
@@ -170,12 +193,14 @@ namespace Medical_Management.Transaction_Forms
                 lstamount.Items.Add(dr["amount"].ToString());
             }
 
+
         }
 
         private void btnexit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
 
         private void cmbsupplierid_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -280,6 +305,7 @@ namespace Medical_Management.Transaction_Forms
                 cmbsupplierid.Items.Add(dr["Supplierid"].ToString());
             }
         }
+
     }
 }
 

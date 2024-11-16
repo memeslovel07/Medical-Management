@@ -35,7 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+
             this.cmbsupplierid = new System.Windows.Forms.ComboBox();
+
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.cmbmedcodesu = new System.Windows.Forms.ComboBox();
@@ -79,6 +81,9 @@
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
+
+            this.cmbsupplierid = new System.Windows.Forms.ComboBox();
+
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,7 +112,9 @@
             this.cmbvounum.Size = new System.Drawing.Size(152, 24);
             this.cmbvounum.TabIndex = 5;
             this.cmbvounum.SelectedIndexChanged += new System.EventHandler(this.cmbvounum_SelectedIndexChanged);
+
             this.cmbvounum.Click += new System.EventHandler(this.cmbvounum_Click);
+
             // 
             // dateTimePicker1
             // 
@@ -168,6 +175,7 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
+
             // cmbsupplierid
             // 
             this.cmbsupplierid.FormattingEnabled = true;
@@ -238,6 +246,68 @@
             // 
             // txtphone
             // 
+
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(395, 27);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 18);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Company Id";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(395, 63);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(120, 18);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Medicine Code";
+            // 
+            // cmbmedcodesu
+            // 
+            this.cmbmedcodesu.FormattingEnabled = true;
+            this.cmbmedcodesu.Location = new System.Drawing.Point(554, 63);
+            this.cmbmedcodesu.Name = "cmbmedcodesu";
+            this.cmbmedcodesu.Size = new System.Drawing.Size(152, 24);
+            this.cmbmedcodesu.TabIndex = 15;
+            // 
+            // cmbcomidsu
+            // 
+            this.cmbcomidsu.FormattingEnabled = true;
+            this.cmbcomidsu.Location = new System.Drawing.Point(554, 21);
+            this.cmbcomidsu.Name = "cmbcomidsu";
+            this.cmbcomidsu.Size = new System.Drawing.Size(152, 24);
+            this.cmbcomidsu.TabIndex = 14;
+            this.cmbcomidsu.Click += new System.EventHandler(this.cmbcomidsu_Click);
+            // 
+            // txtsupid
+            // 
+            this.txtsupid.Location = new System.Drawing.Point(182, 63);
+            this.txtsupid.Name = "txtsupid";
+            this.txtsupid.Size = new System.Drawing.Size(152, 22);
+            this.txtsupid.TabIndex = 11;
+            // 
+            // txtname
+            // 
+            this.txtname.Location = new System.Drawing.Point(182, 104);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(152, 22);
+            this.txtname.TabIndex = 10;
+            // 
+            // txtaddress
+            // 
+            this.txtaddress.Location = new System.Drawing.Point(182, 147);
+            this.txtaddress.Name = "txtaddress";
+            this.txtaddress.Size = new System.Drawing.Size(152, 22);
+            this.txtaddress.TabIndex = 9;
+            // 
+            // txtphone
+            // 
+
             this.txtphone.Location = new System.Drawing.Point(554, 107);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(152, 22);
@@ -338,7 +408,9 @@
             this.txtdiscount.Name = "txtdiscount";
             this.txtdiscount.Size = new System.Drawing.Size(136, 22);
             this.txtdiscount.TabIndex = 33;
+
             this.txtdiscount.TextChanged += new System.EventHandler(this.txtdiscount_TextChanged);
+
             // 
             // txtfinalamt
             // 
@@ -393,7 +465,9 @@
             this.btnremove.TabIndex = 25;
             this.btnremove.Text = "Remove";
             this.btnremove.UseVisualStyleBackColor = true;
+
             this.btnremove.Click += new System.EventHandler(this.btnremove_Click);
+
             // 
             // btnlsadd
             // 
@@ -404,7 +478,9 @@
             this.btnlsadd.TabIndex = 24;
             this.btnlsadd.Text = "Add";
             this.btnlsadd.UseVisualStyleBackColor = true;
+
             this.btnlsadd.Click += new System.EventHandler(this.btnlsadd_Click);
+
             // 
             // lstamount
             // 
@@ -414,7 +490,9 @@
             this.lstamount.Name = "lstamount";
             this.lstamount.Size = new System.Drawing.Size(149, 148);
             this.lstamount.TabIndex = 23;
+
             this.lstamount.SelectedIndexChanged += new System.EventHandler(this.lstamount_SelectedIndexChanged);
+
             // 
             // lstquantity
             // 
@@ -424,7 +502,9 @@
             this.lstquantity.Name = "lstquantity";
             this.lstquantity.Size = new System.Drawing.Size(149, 148);
             this.lstquantity.TabIndex = 22;
+
             this.lstquantity.SelectedIndexChanged += new System.EventHandler(this.lstquantity_SelectedIndexChanged);
+
             // 
             // lstprice
             // 
@@ -434,7 +514,9 @@
             this.lstprice.Name = "lstprice";
             this.lstprice.Size = new System.Drawing.Size(149, 148);
             this.lstprice.TabIndex = 21;
+
             this.lstprice.SelectedIndexChanged += new System.EventHandler(this.lstprice_SelectedIndexChanged);
+
             // 
             // lstmedcode
             // 
@@ -444,7 +526,9 @@
             this.lstmedcode.Name = "lstmedcode";
             this.lstmedcode.Size = new System.Drawing.Size(149, 148);
             this.lstmedcode.TabIndex = 20;
+
             this.lstmedcode.SelectedIndexChanged += new System.EventHandler(this.lstmedcode_SelectedIndexChanged);
+
             // 
             // lstcompid
             // 
@@ -454,7 +538,9 @@
             this.lstcompid.Name = "lstcompid";
             this.lstcompid.Size = new System.Drawing.Size(149, 148);
             this.lstcompid.TabIndex = 19;
+
             this.lstcompid.SelectedIndexChanged += new System.EventHandler(this.lstcompid_SelectedIndexChanged);
+
             // 
             // txtutprice
             // 
@@ -603,6 +689,16 @@
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = true;
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
+
+            // 
+            // cmbsupplierid
+            // 
+            this.cmbsupplierid.FormattingEnabled = true;
+            this.cmbsupplierid.Location = new System.Drawing.Point(182, 63);
+            this.cmbsupplierid.Name = "cmbsupplierid";
+            this.cmbsupplierid.Size = new System.Drawing.Size(152, 24);
+            this.cmbsupplierid.TabIndex = 18;
+
             // 
             // Purchase
             // 
