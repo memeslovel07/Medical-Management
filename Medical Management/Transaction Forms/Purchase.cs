@@ -23,7 +23,7 @@ namespace Medical_Management.Transaction_Forms
 
         DataTable objdt,objdt1;
 
-        DataTable objdt;
+       // DataTable objdt;
 
         SqlCommand objcomm;
         private void Purchase_Load(object sender, EventArgs e)
@@ -77,11 +77,11 @@ namespace Medical_Management.Transaction_Forms
                 MessageBox.Show("Purchase Record Inserted");
 
 
-                objcomm = new SqlCommand("insert into supplier(Supplierid,Suppliername,Companyid,Medichinecode,Address,Phone,Email) values('" + txtsupid.Text + "','" + txtname.Text + "','" + cmbcomid.Text + "','" + cmbmedcodesu.Text + "','" + txtaddress.Text + "','" + txtphone.Text + "','" + txtemail.Text + "')", objcon);
+             /*   objcomm = new SqlCommand("insert into supplier(Supplierid,Suppliername,Companyid,Medichinecode,Address,Phone,Email) values('" + txtsupid.Text + "','" + txtname.Text + "','" + cmbcomid.Text + "','" + cmbmedcodesu.Text + "','" + txtaddress.Text + "','" + txtphone.Text + "','" + txtemail.Text + "')", objcon);
                
 
                 objcomm.ExecuteNonQuery();
-                MessageBox.Show("One Record Inserted");
+                MessageBox.Show("One Record Inserted");*/
                 txtsupid.Text = "";
                 txtname.Text = "";
                 txtaddress.Text = "";
@@ -91,10 +91,10 @@ namespace Medical_Management.Transaction_Forms
 
 
 
-                 objcomm = new SqlCommand("insert into purchase(Vouchernumber,Voucherdate,Supplierid,Totalamount,Discount,Finalamount) values('" + txtvounum.Text + "','" + dateTimePicker1.Text + "','" + txtsupid.Text + "','" + txttotalamt.Text + "','" + txtdiscount.Text + "','" + txtfinalamt.Text + "')", objcon);
+              /*   objcomm = new SqlCommand("insert into purchase(Vouchernumber,Voucherdate,Supplierid,Totalamount,Discount,Finalamount) values('" + txtvounum.Text + "','" + dateTimePicker1.Text + "','" + txtsupid.Text + "','" + txttotalamt.Text + "','" + txtdiscount.Text + "','" + txtfinalamt.Text + "')", objcon);
                   objcomm.ExecuteNonQuery();
                   objcon.Close();
-                  MessageBox.Show("Purchase Record Inserted");
+                  MessageBox.Show("Purchase Record Inserted");*/
 
 
             }
