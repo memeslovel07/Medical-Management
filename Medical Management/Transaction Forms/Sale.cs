@@ -55,6 +55,9 @@ namespace Medical_Management.Transaction_Forms
             cmbcustid.Visible = false;
             txtcustid.Visible = true;
 
+            groupBox2.Enabled = false;
+
+
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -67,6 +70,46 @@ namespace Medical_Management.Transaction_Forms
                     customerid = txtcustid.Text;
                 }
                 else
+
+                {
+                    customerid = cmbcustid.Text;
+                }
+                objcon.Open();
+                objcomm = new SqlCommand("insert into Sale(Vouchernumber,Voucherdate,Customerid,Totalamount,Discount,Finalamount) values('" + txtVouchernum.Text + "','" + dateTimePicker1.Text + "','" +customerid + "','" + txttotalamt.Text + "','" + txtdiscount.Text + "','" + txtfinalamt.Text + "')", objcon);
+                objcomm.ExecuteNonQuery();
+
+                  if(rbtnnew.Checked==true)
+                  {
+                      objcomm = new SqlCommand("insert into Customer(Customerid,Name,Address,Phonenumber,email) values('" + customerid + "','" + txtname.Text + "','" + txtaddress.Text + "','" + txtphone.Text + "','" + txtemail.Text + "')", objcon);
+                      
+                      objcomm.ExecuteNonQuery(); 
+                  }
+                int i;
+                for(i=0;i<lstcompid.Items.Count;i++)
+                {
+                    objcomm = new SqlCommand("insert into tempsale(voucherno,companyid,medicinecode,quantity,amount) values ('" + txtVouchernum.Text + "','" + lstcompid.Items[i].ToString() + "','" + lstmedcode.Items[i].ToString() + "','" + lstquantity.Items[i].ToString() + "','" + lstamt.Items[i].ToString() +"')",objcon);
+                    objcomm.ExecuteNonQuery();
+                }
+                MessageBox.Show("Sale Record Inserted");
+
+            }
+            if(mode =="Update")
+            {
+                objcon.Open();
+                objcomm = new SqlCommand("update Sale set Voucherdate='" + dateTimePicker1.Text + "',Totalamount='" + txttotalamt.Text + "',Discount='" + txtdiscount.Text + "',Finalamount='" + txtfinalamt.Text + "' where Vouchernumber ='" + cmbvounum.Text + "'", objcon);
+
+                objcomm = new SqlCommand("delete tempsale where voucherno='" + cmbvounum.Text + "'",objcon);
+                objcomm.ExecuteNonQuery();
+                int i;
+                for (i = 0; i < lstcompid.Items.Count; i++)
+                {
+                    objcomm = new SqlCommand("insert into tempsale(voucherno,companyid,medicinecode,quantity,amount) values ('" + txtVouchernum.Text + "','" + lstcompid.Items[i].ToString() + "','" + lstmedcode.Items[i].ToString() + "','" + lstquantity.Items[i].ToString() + "','" + lstamt.Items[i].ToString() + "')", objcon);
+                    objcomm.ExecuteNonQuery();
+                }
+                objcon.Close();
+                MessageBox.Show("Record Updated");
+            }
+
                 {
                     customerid = cmbcustid.Text;
                 }
@@ -100,6 +143,7 @@ namespace Medical_Management.Transaction_Forms
             {
 
             }
+
             cmbcustid.Text = "";
             cmbvounum.Text = "";
             cmbmedicinecode.Text = "";
@@ -118,6 +162,15 @@ namespace Medical_Management.Transaction_Forms
             groupBox1.Enabled = false;
             groupBox2.Enabled = false;
             groupBox3.Enabled = false;
+
+            txtcustid.Text = "";
+            txtname.Text = "";
+            txtaddress.Text = "";
+            txtphone.Text = "";
+            txtemail.Text = "";
+            txtVouchernum.Text = "";
+            cmbcustid.Text = "";
+
 
         }
 
@@ -222,8 +275,106 @@ namespace Medical_Management.Transaction_Forms
 
         private void txtquantity_TextChanged(object sender, EventArgs e)
         {
-       
-            txtamountls.Text = Convert.ToString(Convert.ToDouble(txtprice.Text) * Convert.ToDouble(txtquantity.Text));
+            if (txtquantity.Text == "")
+            {
+                txtquantity.Text = "0";
+            }
+            else
+            {
+                txtamountls.Text = Convert.ToString(Convert.ToDouble(txtprice.Text) * Convert.ToDouble(txtquantity.Text));
+            }
+        }
+        private void btnlsadd_Click(object sender, EventArgs e)
+        {
+            lstcompid.Items.Add(cmbcomid.Text);
+            lstmedcode.Items.Add(cmbmedicinecode.Text); 
+            lstprice.Items.Add(txtprice.Text);
+            lstquantity.Items.Add(txtquantity.Text);
+            lstamt.Items.Add(txtamountls.Text);
+            txttotalamt.Text = Convert.ToString(Convert.ToInt32(txtamountls.Text)+Convert.ToInt32(txttotalamt.Text));
+        }
+
+        private void txtdiscount_TextChanged(object sender, EventArgs e)
+        {
+            if (txtdiscount.Text == "")
+            {
+                txtdiscount.Text = "0";
+            }
+            else
+            {
+
+                txtfinalamt.Text = Convert.ToString(Convert.ToInt32(txttotalamt.Text) - (Convert.ToInt32(txttotalamt.Text) * Convert.ToInt32(txtdiscount.Text) / 100));
+            }
+        }
+        private void lstcompid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstmedcode.SelectedIndex = lstcompid.SelectedIndex;
+            lstprice.SelectedIndex = lstcompid.SelectedIndex;
+            lstquantity.SelectedIndex = lstcompid.SelectedIndex;
+            lstamt.SelectedIndex = lstcompid.SelectedIndex;
+        }
+
+        private void lstmedcode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstcompid.SelectedIndex = lstmedcode.SelectedIndex;
+            lstprice.SelectedIndex = lstmedcode.SelectedIndex;
+            lstquantity.SelectedIndex = lstmedcode.SelectedIndex;
+            lstamt.SelectedIndex = lstmedcode.SelectedIndex;
+        }
+
+        private void lstprice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstcompid.SelectedIndex = lstprice.SelectedIndex;
+            lstmedcode.SelectedIndex = lstprice.SelectedIndex;
+            lstquantity.SelectedIndex = lstprice.SelectedIndex;
+            lstamt.SelectedIndex = lstprice.SelectedIndex;
+        }
+
+        private void lstquantity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstcompid.SelectedIndex = lstquantity.SelectedIndex;
+            lstmedcode.SelectedIndex = lstquantity.SelectedIndex;
+            lstprice.SelectedIndex = lstquantity.SelectedIndex;
+            lstamt.SelectedIndex= lstquantity.SelectedIndex;
+        }
+
+        private void lstamt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstcompid.SelectedIndex = lstamt.SelectedIndex;
+            lstmedcode.SelectedIndex = lstamt.SelectedIndex;
+            lstprice.SelectedIndex = lstamt.SelectedIndex;
+            lstquantity.SelectedIndex= lstamt.SelectedIndex;
+        }
+
+        private void btnremove_Click(object sender, EventArgs e)
+        {
+            int i;
+            i=lstamt.SelectedIndex;
+            lstcompid.Items.RemoveAt(lstamt.SelectedIndex);
+            lstmedcode.Items.RemoveAt(i);
+            lstprice.Items.RemoveAt(i);
+            lstquantity.Items.RemoveAt(i);
+           
+            txttotalamt.Text = Convert.ToString(Convert.ToInt32(txttotalamt.Text) - Convert.ToInt32(lstamt.Items[i].ToString()));
+
+            lstamt.Items.RemoveAt(i);
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbvounum_Click(object sender, EventArgs e)
+        {
+            cmbvounum.Items.Clear();
+            objadpt = new SqlDataAdapter("select * from Sale", objcon);
+            objdt = new DataTable();
+            objadpt.Fill(objdt);
+            foreach (DataRow dr in objdt.Rows)
+            {
+                cmbvounum.Items.Add(dr["Vouchernumber"].ToString());
+            }
         }
 
         private void btnlsadd_Click(object sender, EventArgs e)
