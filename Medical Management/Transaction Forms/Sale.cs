@@ -336,5 +336,102 @@ namespace Medical_Management.Transaction_Forms
                 cmbvounum.Items.Add(dr["Vouchernumber"].ToString());
             }
         }
+
+
+   
+        
+
+        
+
+     
+        private void btnlsadd_Click_1(object sender, EventArgs e)
+        {
+            lstcompid.Items.Add(cmbcomid.Text);
+            lstmedcode.Items.Add(cmbmedicinecode.Text);
+            lstprice.Items.Add(txtprice.Text);
+            lstquantity.Items.Add(txtquantity.Text);
+            lstamt.Items.Add(txtamountls.Text);
+            txttotalamt.Text = Convert.ToString(Convert.ToInt32(txtamountls.Text) + Convert.ToInt32(txttotalamt.Text));
+        }
+
+        private void cmbvounum_Click_1(object sender, EventArgs e)
+        {
+            cmbvounum.Items.Clear();
+            objadpt = new SqlDataAdapter("select * from Sale", objcon);
+            objdt = new DataTable();
+            objadpt.Fill(objdt);
+            foreach (DataRow dr in objdt.Rows)
+            {
+                cmbvounum.Items.Add(dr["Vouchernumber"].ToString());
+            }
+        }
+
+        private void btnremove_Click_1(object sender, EventArgs e)
+        {
+            int i;
+            i = lstamt.SelectedIndex;
+            lstcompid.Items.RemoveAt(lstamt.SelectedIndex);
+            lstmedcode.Items.RemoveAt(i);
+            lstprice.Items.RemoveAt(i);
+            lstquantity.Items.RemoveAt(i);
+
+            txttotalamt.Text = Convert.ToString(Convert.ToInt32(txttotalamt.Text) - Convert.ToInt32(lstamt.Items[i].ToString()));
+
+            lstamt.Items.RemoveAt(i);
+        }
+
+        private void lstamt_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            lstcompid.SelectedIndex = lstamt.SelectedIndex;
+            lstmedcode.SelectedIndex = lstamt.SelectedIndex;
+            lstprice.SelectedIndex = lstamt.SelectedIndex;
+            lstquantity.SelectedIndex = lstamt.SelectedIndex;
+        }
+
+        private void lstquantity_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            lstcompid.SelectedIndex = lstquantity.SelectedIndex;
+            lstmedcode.SelectedIndex = lstquantity.SelectedIndex;
+            lstprice.SelectedIndex = lstquantity.SelectedIndex;
+            lstamt.SelectedIndex = lstquantity.SelectedIndex;
+        }
+
+        private void lstprice_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            lstcompid.SelectedIndex = lstprice.SelectedIndex;
+            lstmedcode.SelectedIndex = lstprice.SelectedIndex;
+            lstquantity.SelectedIndex = lstprice.SelectedIndex;
+            lstamt.SelectedIndex = lstprice.SelectedIndex;
+        }
+
+        private void lstmedcode_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            lstcompid.SelectedIndex = lstmedcode.SelectedIndex;
+            lstprice.SelectedIndex = lstmedcode.SelectedIndex;
+            lstquantity.SelectedIndex = lstmedcode.SelectedIndex;
+            lstamt.SelectedIndex = lstmedcode.SelectedIndex;
+        }
+
+        private void lstcompid_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+            lstmedcode.SelectedIndex = lstcompid.SelectedIndex;
+            lstprice.SelectedIndex = lstcompid.SelectedIndex;
+            lstquantity.SelectedIndex = lstcompid.SelectedIndex;
+            lstamt.SelectedIndex = lstcompid.SelectedIndex;
+        }
+
+        private void txtdiscount_TextChanged_1(object sender, EventArgs e)
+        {
+            txtfinalamt.Text = Convert.ToString(Convert.ToInt32(txttotalamt.Text) - (Convert.ToInt32(txttotalamt.Text) * Convert.ToInt32(txtdiscount.Text) / 100));
+        }
+
+        private void btnexit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
+
     }
 }
