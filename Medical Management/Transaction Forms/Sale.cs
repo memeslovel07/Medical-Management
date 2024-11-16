@@ -95,8 +95,14 @@ namespace Medical_Management.Transaction_Forms
                 objcon.Open();
                 objcomm = new SqlCommand("update Sale set Voucherdate='" + dateTimePicker1.Text + "',Totalamount='" + txttotalamt.Text + "',Discount='" + txtdiscount.Text + "',Finalamount='" + txtfinalamt.Text + "' where Vouchernumber ='" + cmbvounum.Text + "'", objcon);
 
-              //  objcomm = new SqlCommand("update tempsale set companyid='" + cmbcomid.Text + "'medicinecode,='" + cmbmedicinecode.Text + "',quantity='" + txtquantity.Text + "',amount='" + txtamountls.Text + "' where Vouchernumber ='" + cmbvounum.Text + "'", objcon);
+                objcomm = new SqlCommand("delete tempsale where voucherno='" + cmbvounum.Text + "'",objcon);
                 objcomm.ExecuteNonQuery();
+                int i;
+                for (i = 0; i < lstcompid.Items.Count; i++)
+                {
+                    objcomm = new SqlCommand("insert into tempsale(voucherno,companyid,medicinecode,quantity,amount) values ('" + txtVouchernum.Text + "','" + lstcompid.Items[i].ToString() + "','" + lstmedcode.Items[i].ToString() + "','" + lstquantity.Items[i].ToString() + "','" + lstamt.Items[i].ToString() + "')", objcon);
+                    objcomm.ExecuteNonQuery();
+                }
                 objcon.Close();
                 MessageBox.Show("Record Updated");
             }
@@ -229,10 +235,15 @@ namespace Medical_Management.Transaction_Forms
 
         private void txtquantity_TextChanged(object sender, EventArgs e)
         {
-       
-            txtamountls.Text = Convert.ToString(Convert.ToDouble(txtprice.Text) * Convert.ToDouble(txtquantity.Text));
+            if (txtquantity.Text == "")
+            {
+                txtquantity.Text = "0";
+            }
+            else
+            {
+                txtamountls.Text = Convert.ToString(Convert.ToDouble(txtprice.Text) * Convert.ToDouble(txtquantity.Text));
+            }
         }
-
         private void btnlsadd_Click(object sender, EventArgs e)
         {
             lstcompid.Items.Add(cmbcomid.Text);
@@ -245,9 +256,16 @@ namespace Medical_Management.Transaction_Forms
 
         private void txtdiscount_TextChanged(object sender, EventArgs e)
         {
-          txtfinalamt.Text = Convert.ToString(Convert.ToInt32(txttotalamt.Text)- (Convert.ToInt32(txttotalamt.Text)* Convert.ToInt32(txtdiscount.Text)/100));
-        }
+            if (txtdiscount.Text == "")
+            {
+                txtdiscount.Text = "0";
+            }
+            else
+            {
 
+                txtfinalamt.Text = Convert.ToString(Convert.ToInt32(txttotalamt.Text) - (Convert.ToInt32(txttotalamt.Text) * Convert.ToInt32(txtdiscount.Text) / 100));
+            }
+        }
         private void lstcompid_SelectedIndexChanged(object sender, EventArgs e)
         {
             lstmedcode.SelectedIndex = lstcompid.SelectedIndex;

@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbsupplierid = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.cmbmedcodesu = new System.Windows.Forms.ComboBox();
@@ -78,7 +79,6 @@
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
-            this.cmbsupplierid = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -107,6 +107,7 @@
             this.cmbvounum.Size = new System.Drawing.Size(152, 24);
             this.cmbvounum.TabIndex = 5;
             this.cmbvounum.SelectedIndexChanged += new System.EventHandler(this.cmbvounum_SelectedIndexChanged);
+            this.cmbvounum.Click += new System.EventHandler(this.cmbvounum_Click);
             // 
             // dateTimePicker1
             // 
@@ -166,6 +167,16 @@
             this.groupBox2.Size = new System.Drawing.Size(884, 194);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
+            // 
+            // cmbsupplierid
+            // 
+            this.cmbsupplierid.FormattingEnabled = true;
+            this.cmbsupplierid.Location = new System.Drawing.Point(182, 63);
+            this.cmbsupplierid.Name = "cmbsupplierid";
+            this.cmbsupplierid.Size = new System.Drawing.Size(152, 24);
+            this.cmbsupplierid.TabIndex = 18;
+            this.cmbsupplierid.SelectedIndexChanged += new System.EventHandler(this.cmbsupplierid_SelectedIndexChanged);
+            this.cmbsupplierid.Click += new System.EventHandler(this.cmbsupplierid_Click);
             // 
             // label17
             // 
@@ -327,6 +338,7 @@
             this.txtdiscount.Name = "txtdiscount";
             this.txtdiscount.Size = new System.Drawing.Size(136, 22);
             this.txtdiscount.TabIndex = 33;
+            this.txtdiscount.TextChanged += new System.EventHandler(this.txtdiscount_TextChanged);
             // 
             // txtfinalamt
             // 
@@ -381,6 +393,7 @@
             this.btnremove.TabIndex = 25;
             this.btnremove.Text = "Remove";
             this.btnremove.UseVisualStyleBackColor = true;
+            this.btnremove.Click += new System.EventHandler(this.btnremove_Click);
             // 
             // btnlsadd
             // 
@@ -391,6 +404,7 @@
             this.btnlsadd.TabIndex = 24;
             this.btnlsadd.Text = "Add";
             this.btnlsadd.UseVisualStyleBackColor = true;
+            this.btnlsadd.Click += new System.EventHandler(this.btnlsadd_Click);
             // 
             // lstamount
             // 
@@ -400,6 +414,7 @@
             this.lstamount.Name = "lstamount";
             this.lstamount.Size = new System.Drawing.Size(149, 148);
             this.lstamount.TabIndex = 23;
+            this.lstamount.SelectedIndexChanged += new System.EventHandler(this.lstamount_SelectedIndexChanged);
             // 
             // lstquantity
             // 
@@ -409,6 +424,7 @@
             this.lstquantity.Name = "lstquantity";
             this.lstquantity.Size = new System.Drawing.Size(149, 148);
             this.lstquantity.TabIndex = 22;
+            this.lstquantity.SelectedIndexChanged += new System.EventHandler(this.lstquantity_SelectedIndexChanged);
             // 
             // lstprice
             // 
@@ -418,6 +434,7 @@
             this.lstprice.Name = "lstprice";
             this.lstprice.Size = new System.Drawing.Size(149, 148);
             this.lstprice.TabIndex = 21;
+            this.lstprice.SelectedIndexChanged += new System.EventHandler(this.lstprice_SelectedIndexChanged);
             // 
             // lstmedcode
             // 
@@ -427,6 +444,7 @@
             this.lstmedcode.Name = "lstmedcode";
             this.lstmedcode.Size = new System.Drawing.Size(149, 148);
             this.lstmedcode.TabIndex = 20;
+            this.lstmedcode.SelectedIndexChanged += new System.EventHandler(this.lstmedcode_SelectedIndexChanged);
             // 
             // lstcompid
             // 
@@ -436,6 +454,7 @@
             this.lstcompid.Name = "lstcompid";
             this.lstcompid.Size = new System.Drawing.Size(149, 148);
             this.lstcompid.TabIndex = 19;
+            this.lstcompid.SelectedIndexChanged += new System.EventHandler(this.lstcompid_SelectedIndexChanged);
             // 
             // txtutprice
             // 
@@ -584,14 +603,6 @@
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = true;
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
-            // 
-            // cmbsupplierid
-            // 
-            this.cmbsupplierid.FormattingEnabled = true;
-            this.cmbsupplierid.Location = new System.Drawing.Point(182, 63);
-            this.cmbsupplierid.Name = "cmbsupplierid";
-            this.cmbsupplierid.Size = new System.Drawing.Size(152, 24);
-            this.cmbsupplierid.TabIndex = 18;
             // 
             // Purchase
             // 

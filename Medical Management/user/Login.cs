@@ -20,11 +20,7 @@ namespace Medical_Management
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            
-                
-        }
+        
 
         private void btLogin_Click(object sender, EventArgs e)
         {
