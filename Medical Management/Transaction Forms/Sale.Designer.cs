@@ -105,7 +105,7 @@
             this.cmbvounum.Size = new System.Drawing.Size(152, 24);
             this.cmbvounum.TabIndex = 4;
             this.cmbvounum.SelectedIndexChanged += new System.EventHandler(this.cmbvounum_SelectedIndexChanged);
-            this.cmbvounum.Click += new System.EventHandler(this.cmbvounum_Click);
+            this.cmbvounum.Click += new System.EventHandler(this.cmbvounum_Click_1);
             // 
             // dateTimePicker1
             // 
@@ -323,7 +323,7 @@
             this.txtdiscount.Name = "txtdiscount";
             this.txtdiscount.Size = new System.Drawing.Size(136, 22);
             this.txtdiscount.TabIndex = 33;
-            this.txtdiscount.TextChanged += new System.EventHandler(this.txtdiscount_TextChanged);
+            this.txtdiscount.TextChanged += new System.EventHandler(this.txtdiscount_TextChanged_1);
             // 
             // txtfinalamt
             // 
@@ -378,7 +378,7 @@
             this.btnremove.TabIndex = 25;
             this.btnremove.Text = "Remove";
             this.btnremove.UseVisualStyleBackColor = true;
-            this.btnremove.Click += new System.EventHandler(this.btnremove_Click);
+            this.btnremove.Click += new System.EventHandler(this.btnremove_Click_1);
             // 
             // btnlsadd
             // 
@@ -389,7 +389,7 @@
             this.btnlsadd.TabIndex = 24;
             this.btnlsadd.Text = "Add";
             this.btnlsadd.UseVisualStyleBackColor = true;
-            this.btnlsadd.Click += new System.EventHandler(this.btnlsadd_Click);
+            this.btnlsadd.Click += new System.EventHandler(this.btnlsadd_Click_1);
             // 
             // lstamt
             // 
@@ -399,7 +399,7 @@
             this.lstamt.Name = "lstamt";
             this.lstamt.Size = new System.Drawing.Size(149, 148);
             this.lstamt.TabIndex = 23;
-            this.lstamt.SelectedIndexChanged += new System.EventHandler(this.lstamt_SelectedIndexChanged);
+            this.lstamt.SelectedIndexChanged += new System.EventHandler(this.lstamt_SelectedIndexChanged_1);
             // 
             // lstquantity
             // 
@@ -409,7 +409,7 @@
             this.lstquantity.Name = "lstquantity";
             this.lstquantity.Size = new System.Drawing.Size(149, 148);
             this.lstquantity.TabIndex = 22;
-            this.lstquantity.SelectedIndexChanged += new System.EventHandler(this.lstquantity_SelectedIndexChanged);
+            this.lstquantity.SelectedIndexChanged += new System.EventHandler(this.lstquantity_SelectedIndexChanged_1);
             // 
             // lstprice
             // 
@@ -419,7 +419,7 @@
             this.lstprice.Name = "lstprice";
             this.lstprice.Size = new System.Drawing.Size(149, 148);
             this.lstprice.TabIndex = 21;
-            this.lstprice.SelectedIndexChanged += new System.EventHandler(this.lstprice_SelectedIndexChanged);
+            this.lstprice.SelectedIndexChanged += new System.EventHandler(this.lstprice_SelectedIndexChanged_1);
             // 
             // lstmedcode
             // 
@@ -429,7 +429,7 @@
             this.lstmedcode.Name = "lstmedcode";
             this.lstmedcode.Size = new System.Drawing.Size(149, 148);
             this.lstmedcode.TabIndex = 20;
-            this.lstmedcode.SelectedIndexChanged += new System.EventHandler(this.lstmedcode_SelectedIndexChanged);
+            this.lstmedcode.SelectedIndexChanged += new System.EventHandler(this.lstmedcode_SelectedIndexChanged_1);
             // 
             // lstcompid
             // 
@@ -439,7 +439,7 @@
             this.lstcompid.Name = "lstcompid";
             this.lstcompid.Size = new System.Drawing.Size(149, 148);
             this.lstcompid.TabIndex = 19;
-            this.lstcompid.SelectedIndexChanged += new System.EventHandler(this.lstcompid_SelectedIndexChanged);
+            this.lstcompid.SelectedIndexChanged += new System.EventHandler(this.lstcompid_SelectedIndexChanged_1);
             // 
             // txtprice
             // 
@@ -589,7 +589,7 @@
             this.btnexit.TabIndex = 25;
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = true;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click_1);
             // 
             // Sale
             // 
